@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require('dotenv').config();
 console.log("🟡 .env file loaded");
 
@@ -32,3 +33,21 @@ mongoose.connect(MONGO_URI, {
 app.get('/', (req, res) => {
   res.send('API is working!');
 });
+=======
+import express from 'express';
+import cors from 'cors';
+
+const app = express();
+const PORT = 5000;
+
+app.use(cors());
+app.use(express.json());
+
+app.get('/api/projects', (req, res) => {
+  res.json([{ id: 1, name: "Test Project" }]);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
+>>>>>>> 52dd01c52d5d779a24bf328da073b58c3b304f6f
