@@ -29,11 +29,9 @@ mongoose.connect(MONGO_URI, {
 .catch((error) => {
   console.error('❌ MongoDB connection error:', error.message);
 });
-
 app.get('/', (req, res) => {
   res.send('API is working!');
 });
-
 import express from 'express';
 import cors from 'cors';
 
@@ -46,7 +44,6 @@ app.use(express.json());
 app.get('/api/projects', (req, res) => {
   res.json([{ id: 1, name: "Test Project" }]);
 });
-
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
